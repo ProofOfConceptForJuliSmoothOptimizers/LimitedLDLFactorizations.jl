@@ -4,6 +4,7 @@ julia benchmark/send_comment_to_pr.jl -o $org -r $repo -p $pullrequest -c '**Sta
 
 julia benchmark/$1 $2
 
+
 if [ "$?" -eq "0" ] ; then
     julia benchmark/send_comment_to_pr.jl -o $org -r $repo -p $pullrequest -g
 else
