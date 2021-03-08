@@ -5,7 +5,7 @@ using LimitedLDLFactorizations
 # download from https://github.com/optimizers/sqd-collection
 run(`git clone https://github.com/optimizers/sqd-collection.git`)
 
-const sqd_path = joinpath(dirname(pathof(LimitedLDLFactorizations)), "..", "benchmark", "sqd-collection")
+const sqd_path = joinpath(dirname(pathof(LimitedLDLFactorizations)), "..", "sqd-collection")
 subdirs = readdir(sqd_path)
 const formulations = ("2x2", "3x3")
 const iters = (0, 5, 10)
