@@ -49,7 +49,7 @@ pipeline {
 
      causeString: 'Triggered on $comment',
 
-     token: "LimitedLDLFactorizations",
+     token: "",
 
      printContributedVariables: true,
      printPostContent: true,
@@ -108,7 +108,6 @@ pipeline {
         sh '''
         git clean -fd
         git checkout master
-        git branch -D $BRANCH_NAME || true
         '''
       }
     }
