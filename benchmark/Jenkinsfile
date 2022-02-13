@@ -90,6 +90,19 @@ pipeline {
         }
       }
     }
+    stage('setup benchmark repository') {
+      when {
+        expression { env.comment }
+      }
+      steps {
+        dir(WORKSPACE + "/$repo/BenchmarkSetup") {
+          sh '''
+            git fetch origin
+            git pull --ff-only origin master
+          '''
+        }   
+      }
+    }
     stage('run benchmarks') {
       when {
         expression { env.comment }
