@@ -85,9 +85,9 @@ pipeline {
             git branch -D $LOCAL_BRANCH_NAME || true
             git fetch origin pull/$pullrequest/head:$LOCAL_BRANCH_NAME
             git checkout $LOCAL_BRANCH_NAME --
-            git clone https://github.com/ProofOfConceptForJuliSmoothOptimizers/BenchmarkSetup.git || true
           '''
         }
+        sh "git clone https://github.com/ProofOfConceptForJuliSmoothOptimizers/BenchmarkSetup.git || true"
       }
     }
     stage('setup benchmark repository') {
@@ -95,7 +95,7 @@ pipeline {
         expression { env.comment }
       }
       steps {
-        dir(WORKSPACE + "/$repo/BenchmarkSetup") {
+        dir(WORKSPACE + "/BenchmarkSetup") {
           sh '''
             git fetch origin
             git pull --ff-only origin master
